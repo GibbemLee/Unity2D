@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+//Put the target at mouse click position
+
+public class t_Magnetic : MonoBehaviour, zIInteractable
+{
+	public GameObject magnetic; //target
+
+	public void Interact(zDisplayImage currentDisplay)
+	{
+		var screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+		Vector3 mouse = Camera.main.ScreenToWorldPoint(screenPoint); //read the position
+
+
+		magnetic[0].transform.position = new Vector3(mouse.x, mouse.y, -3f); //put the target at the position
+	}
+}
