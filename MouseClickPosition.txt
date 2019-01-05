@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Put the target at mouse click position
+//set background 2d box collider and tag->intertact 
 
-public class t_Magnetic : MonoBehaviour, zIInteractable
+public class t_Magnetic : MonoBehaviour, zIInteractable //start event when click background(collider) 
 {
 	public GameObject magnetic; //target
 

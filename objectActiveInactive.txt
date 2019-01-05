@@ -1,0 +1,43 @@
+using System.Collections;
+
+using System.Collections.Generic;
+using UnityEngine;
+
+
+
+//object click, target active
+public class t_paper : MonoBehaviour, zIInteractable
+{
+//state before, next state active and gameObject inactive
+//state after and info, next state and gameObject active
+//state open, gameObject inactive (using with after, info)
+    public Paper State;
+    public enum Paper { before, after, open, info } //label
+    public GameObject nextState;
+
+//initializing
+    void Start()
+    {
+        /*if (State == Paper.before || State == Paper.info) gameObject.SetActive(true);
+        if (State == Paper.after || State == Paper.open) gameObject.SetActive(false);
+        if(nextState != null) nextState.SetActive(false);*/
+    }
+   
+
+    public void Interact(zDisplayImage currentDisplay)
+    {
+        if (State == Paper.before)
+        {
+            nextState.SetActive(true);
+            gameObject.SetActive(false); //object with this script
+        }
+        if (State == Paper.after || State == Paper.info)
+        {
+            nextState.SetActive(true);
+        }
+        if (State == Paper.open)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+}
