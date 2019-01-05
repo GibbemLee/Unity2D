@@ -15,6 +15,6 @@ public class t_Magnetic : MonoBehaviour, zIInteractable
 		Vector3 mouse = Camera.main.ScreenToWorldPoint(screenPoint); //read the position
 
 
-		magnetic[0].transform.position = new Vector3(mouse.x, mouse.y, -3f); //put the target at the position
+		magnetic.transform.position = new Vector3(mouse.x, mouse.y, -3f); //put the target at the position
 	}
 }
